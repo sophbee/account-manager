@@ -3,7 +3,6 @@ import { Navbar } from 'react-bootstrap';
 import image from '../../images/paymerang.png';
 
 class Header extends Component {
-
 render () {
     return (
       <Navbar>

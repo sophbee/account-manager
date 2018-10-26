@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, Button, Row, Col } from 'react-bootstrap';
+import { Panel, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class PayeeCard extends Component {
   constructor(props, context) {
@@ -15,29 +15,30 @@ class PayeeCard extends Component {
   render() {
     return (
       <div>
-        <Panel id="collapsible-panel" defaultExpanded>
+        <Panel className="panel-payee" defaultExpanded>
           <Panel.Heading>
-            <Panel.Title toggle>
-              <h3>{this.props.company + ':'}</h3>
-            </Panel.Title>
+            <Panel.Title componentClass="h2" toggle>{this.props.company}</Panel.Title>
           </Panel.Heading>
           <Panel.Collapse>
             <Panel.Body>
-              <Row>
+              <Row> 
                 <Col md={6}>
-                  <h4>{'Company Info'}</h4>
-                  <p>{'Address: ' + this.props.address1 + " " + this.props.address2}</p>
-                  <p>{this.props.city + ", " + this.props.state + " " + this.props.postal + " " + this.props.country}</p>
-                  <p>{'Phone: ' + this.props.phone}</p>
-                  <p>{'Fax: ' + this.props.fax}</p>
-                  <p>{'Attn: ' + this.props.attn}</p>
-                  <p>{'Last Submission Date: ' + this.props.submissionDate}</p>
+                  <h4>Company Info</h4>
+                  <ListGroup className="list-group-company-info">
+                    <ListGroupItem header="Address"> {this.props.address1 + " " + this.props.address2} <br/> {this.props.city + ", " + this.props.state + " " + this.props.postal + " " + this.props.country}</ListGroupItem>
+                    <ListGroupItem header="Phone">{this.props.phone}</ListGroupItem>
+                    <ListGroupItem header="Fax">{this.props.fax}</ListGroupItem>
+                    <ListGroupItem header="Attn">{this.props.attn}</ListGroupItem>
+                    <ListGroupItem header="Last Submission Date">{this.props.submissionDate}</ListGroupItem>
+                  </ListGroup>
                 </Col>
                 <Col md={6}>
-                  <h4>{'Payment Info'}</h4>
-                  <p>{'PAN: ' + this.props.PAN}</p>
-                  <p>{'CVV: ' + this.props.CVV}</p>
-                  <p>{'Exp: ' + this.props.EXP}</p>
+                  <h4>Payment Info</h4>
+                  <ListGroup>
+                    <ListGroupItem header="PAN">{this.props.PAN}</ListGroupItem>
+                    <ListGroupItem header="CVV">{this.props.CVV}</ListGroupItem>
+                    <ListGroupItem header="Exp">{this.props.EXP}</ListGroupItem>
+                  </ListGroup>
                 </Col>
               </Row>
             </Panel.Body>

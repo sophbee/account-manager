@@ -2,11 +2,6 @@ body {
   font-size: 15px;
   background-color: #4f758b;
   font-family: 'Nunito', sans-serif;
-
-}
-
-.App {
-  text-align: center;
 }
 
 .App-logo {
@@ -44,4 +39,22 @@ td {
   to {
     transform: rotate(360deg);
   }
+}
+
+h4,
+.panel-payee .list-group-item-heading,
+.panel-payee .panel-title {
+  font-weight: bold;
+}
+.panel-payee .list-group-item-heading {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.panel-payee .panel-title {
+  font-size: 24px;
+}
+
+.form-column {
+  padding-left: 0;
 }
